@@ -21,11 +21,12 @@ MainView {
             title: i18n.tr('HelloWorldPy')
         }
 
-        
 
         Label {
             id:label
-            anchors.centerIn: parent
+            anchors.top: header.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 10
             text: i18n.tr('Hello World!')
         }
 
@@ -52,13 +53,26 @@ MainView {
 
             anchors.top: listview_title.bottom
             anchors.left: parent.left
+            width: parent.width
             anchors.bottom: status.top
+            anchors.bottomMargin: 10
 
             ListView {
                 id: listView
-                
+                anchors.leftMargin: 5
                 spacing: 1
-                delegate: Text { color: 'black'; text: modelData; }
+                delegate: 
+                    Rectangle {
+                        height: units.gu(5)
+                        border.width: 1
+                        border.color: "lightsteelblue"
+                        Text {
+                            font.pointSize: 14;
+                            color: 'black';
+                            text: modelData;
+                        }
+                    }
+                    
             }
         }
 

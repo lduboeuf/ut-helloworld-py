@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: helloworldpy.ldub\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-09 12:51+0000\n"
+"POT-Creation-Date: 2018-04-09 14:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,18 +21,18 @@ msgstr ""
 msgid "HelloWorldPy"
 msgstr ""
 
-#: ../qml/Main.qml:29
+#: ../qml/Main.qml:30
 msgid "Hello World!"
 msgstr ""
 
-#: ../qml/Main.qml:38
+#: ../qml/Main.qml:39
 msgid "click me!"
 msgstr ""
 
-#: ../qml/Main.qml:48
+#: ../qml/Main.qml:49
 msgid "Directory Listing:"
 msgstr ""
 
-#: ../qml/Main.qml:68
+#: ../qml/Main.qml:83
 msgid "rien du tout"
 msgstr ""
