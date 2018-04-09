@@ -60,12 +60,13 @@ MainView {
             ListView {
                 id: listView
                 anchors.leftMargin: 5
-                spacing: 1
+
                 delegate: 
                     Rectangle {
-                        height: units.gu(5)
+                        height: childrenRect.height + 2
+                        width: parent.width
                         border.width: 1
-                        border.color: "lightsteelblue"
+                        border.color: "lightgray"
                         Text {
                             font.pointSize: 14;
                             color: 'black';
