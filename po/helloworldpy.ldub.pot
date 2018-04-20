@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: helloworldpy.ldub\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-20 09:41+0000\n"
+"POT-Creation-Date: 2018-04-20 12:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Main.qml:20 helloworldpy.desktop.in.h:1
+#: ../qml/test.qml:12
+msgid "Root page"
+msgstr ""
+
+#: ../qml/test.qml:17
+msgid "Page one"
+msgstr ""
+
+#: ../qml/test.qml:22
+msgid "External page"
+msgstr ""
+
+#: ../qml/Main.qml:21 helloworldpy.desktop.in.h:1
 msgid "HelloWorldPy"
 msgstr ""
 
-#: ../qml/Main.qml:29
+#: ../qml/Main.qml:30
 msgid "Hello World!"
 msgstr ""
 
-#: ../qml/Main.qml:38
+#: ../qml/Main.qml:39
 msgid "click me!"
 msgstr ""
 
-#: ../qml/Main.qml:48
+#: ../qml/Main.qml:50
 msgid "Directory Listing:"
 msgstr ""
 
-#: ../qml/Main.qml:87
-msgid "rien du tout"
+#: ../qml/Main.qml:88
+msgid "navigate to page2"
 msgstr ""

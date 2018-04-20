@@ -13,6 +13,7 @@ MainView {
     height: units.gu(75)
 
     Page {
+        id: page1
         anchors.fill: parent
 
         header: PageHeader {
@@ -32,7 +33,7 @@ MainView {
         Button {
             id:btn
             anchors.top: label.bottom
-            anchors.left: label.left
+            anchors.horizontalCenter: parent.horizontalCenter
             anchors.topMargin: 5
             color: "blue"
             text: i18n.tr('click me!')
@@ -40,6 +41,7 @@ MainView {
                 python.getFiles()
             }
         }
+
 
         Label {
             id:listview_title
@@ -81,11 +83,23 @@ MainView {
             }
         }
 
-        Label {
-            id:status
+        Button {
+            id:btnPage2
+            text: i18n.tr('navigate to page2')
             anchors.bottom: parent.bottom
-            text: i18n.tr('rien du tout')
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: "green"
+            onClicked: {
+                stackView.push("qml/Page2.qml")
+            }
         }
+
+
+    }
+
+    PageStack {
+        id: stackView
+        Component.onCompleted: push(page1)
     }
 
     Python {
@@ -98,7 +112,7 @@ MainView {
                 console.log('mymodule module imported');
                 python.call('mymodule.speak', ['Hello World!'], function(returnValue) {
                     console.log('mymodule.speak returned ' + returnValue);
-                    status.text = returnValue
+                    label.text = returnValue
                 })
 
             });
