@@ -1,7 +1,6 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
 import io.thp.pyotherside 1.2
 
 MainView {
@@ -63,7 +62,7 @@ MainView {
 
                 delegate: 
                     Rectangle {
-                        height: childrenRect.height + 2
+                        height: childrenRect.height + 5
                         width: parent.width
                         border.width: 1
                         border.color: "lightgray"
@@ -72,7 +71,12 @@ MainView {
                             color: 'black';
                             text: modelData;
                         }
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: listView.currentIndex = index
+                        }
                     }
+                onCurrentItemChanged: console.log(listView.model[listView.currentIndex] + ' selected')
                     
             }
         }
@@ -90,30 +94,19 @@ MainView {
         Component.onCompleted: {
             addImportPath(Qt.resolvedUrl('./'));
 
-            importModule('module_name', function() {
-                console.log('module_name module imported');
-                python.call('module_name.speak', ['Hello World!'], function(returnValue) {
-                    console.log('module_name.speak returned ' + returnValue);
+            importModule('mymodule', function() {
+                console.log('mymodule module imported');
+                python.call('mymodule.speak', ['Hello World!'], function(returnValue) {
+                    console.log('mymodule.speak returned ' + returnValue);
                     status.text = returnValue
                 })
 
             });
-
-            importModule('os', function() {
-                    console.log('Python module "os" is now imported');
-/*
-                    // Asynchronous function calls
-                    call('os.listdir', [], function(result) {
-                        console.log('dir listing: ' + result);
-                        listView.model = result;
-                    });
-*/
-                });
             
         }
 
         function getFiles(){
-            call('os.listdir', ['/'], function(result) {
+            call('mymodule.listdir', ['.'], function(result) {
                         //console.log('dir listing: ' + result);
                         listView.model = result;
             });
