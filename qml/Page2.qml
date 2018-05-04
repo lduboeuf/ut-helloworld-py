@@ -3,6 +3,7 @@ import QtQuick.Layouts 1.1
 import Ubuntu.Components 1.3
 
 Page {
+    id:page2
     width: units.gu(45)
     height: units.gu(75)
 
@@ -12,6 +13,8 @@ Page {
         text: qsTr("You are on Page 2. kikou zonote")
         anchors.centerIn: parent
     }
+
+
 
 
 }
