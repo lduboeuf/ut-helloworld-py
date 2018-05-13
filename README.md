@@ -1,3 +1,4 @@
 # HelloWorldPy
 
-A short description of your app
+
+Ubuntu Touch helloworld QML->python using pyotherside

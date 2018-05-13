@@ -7,6 +7,8 @@ Page {
     width: units.gu(45)
     height: units.gu(75)
 
+    anchors.fill: parent
+
     header: PageHeader {
         id: header
         title: i18n.tr('Page 2')
