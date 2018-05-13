@@ -1,8 +1,8 @@
 {
     "name": "helloworldpy.ldub",
-    "description": "A short description of your app",
+    "description": "test qml->python app",
     "architecture": "@CLICK_ARCH@",
-    "title": "HelloWorldPy",
+    "title": "HelloWorld-UTPy",
     "hooks": {
         "helloworldpy": {
             "apparmor": "helloworldpy.apparmor",

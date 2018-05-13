@@ -12,6 +12,8 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
+    property string myglobalvar: "kikouuu"
+
     Page {
         id: page1
         anchors.fill: parent
@@ -38,13 +40,14 @@ MainView {
             color: "blue"
             text: i18n.tr('click me!')
             onClicked: {
-                python.getFiles()
+                python.getFiles('.')
             }
         }
 
 
         Label {
             id:listview_title
+            visible: false
             anchors.top: btn.bottom
             anchors.left: parent.left
             text: i18n.tr('Directory Listing:')
@@ -55,16 +58,18 @@ MainView {
             anchors.top: listview_title.bottom
             anchors.left: parent.left
             width: parent.width
-            anchors.bottom: status.top
+            height: parent.height - 5
+            anchors.bottom: btnPage2.top
             anchors.bottomMargin: 10
 
             ListView {
                 id: listView
                 anchors.leftMargin: 5
+                property int curr_index: 0
 
                 delegate: 
                     Rectangle {
-                        height: childrenRect.height + 5
+                        height: childrenRect.height + 10
                         width: parent.width
                         border.width: 1
                         border.color: "lightgray"
@@ -78,7 +83,11 @@ MainView {
                             onClicked: listView.currentIndex = index
                         }
                     }
-                onCurrentItemChanged: console.log(listView.model[listView.currentIndex] + ' selected')
+                onCurrentItemChanged: {
+
+                    console.log(listView.model[listView.currentIndex] + ' selected');
+                        
+                }
                     
             }
         }
@@ -119,10 +128,11 @@ MainView {
             
         }
 
-        function getFiles(){
-            call('mymodule.listdir', ['.'], function(result) {
+        function getFiles(currentDir){
+            call('mymodule.listdir', [currentDir], function(result) {
                         //console.log('dir listing: ' + result);
                         listView.model = result;
+                        listview_title.visible = true;
             });
         }
 

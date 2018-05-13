@@ -7,12 +7,21 @@ Page {
     width: units.gu(45)
     height: units.gu(75)
 
-    title: qsTr("Page 2")
-
-    Label {
-        text: qsTr("You are on Page 2. kikou zonote")
-        anchors.centerIn: parent
+    header: PageHeader {
+        id: header
+        title: i18n.tr('Page 2')
     }
+
+    
+    Label {
+            id:label
+            anchors.centerIn: parent
+            text: i18n.tr('Hello Page2 - var from MainView:') + root.myglobalvar
+    }
+
+    
+
+    
 
 
 
